@@ -1,0 +1,45 @@
+// ------------------------------------
+// Components > Visibility Label
+// ------------------------------------
+
+.c-visibility-label {
+  @include font($scale: 0, $uppercase: true, $letter-spacing: brevier);
+
+  display: inline-block;
+  border-radius: var(--space-4);
+  padding: 0 var(--space-4);
+  color: var(--color-text-secondary);
+  background-color: var(--color-border-secondary);
+  border: var(--border-width) var(--border-style) var(--color-border-secondary);
+  font-size: var(--font-size-scale-0);
+  line-height: var(--line-height-scale-1);
+  font-family: var(--font-family-meta);
+  font-weight: var(--font-family-meta-weight);
+  letter-spacing: var(--font-family-meta-spacing);
+  vertical-align: baseline;
+
+  &--editors-pick {
+    background-color: var(--color-background-primary);
+    line-height: inherit;
+  }
+
+  span {
+    display: none;
+  }
+
+  &--paid .paid,
+  &--tiers .paid,
+  &--members .members,
+  &--public .public {
+    display: block;
+  }
+
+  &--is-member.c-visibility-label--public,
+  &--is-member.c-visibility-label--members {
+    display: none;
+  }
+
+  &--is-paid-member {
+    display: none;
+  }
+}

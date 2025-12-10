@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='{{ @site.locale }}' class='{{#if @custom.enable_dark_mode}} is-darkModeAdminSetting-enabled {{/if}}'>
+
+  <!--
+
+  The Sheffield Tribune
+
+  Published with Ghost by Mill Media millmediaco.uk
+  Website design by Jenny Miles jennylmiles.com
+  Ghost theme by VelocityFlow velocityflow.net 
+  Based on the Tripoli theme by aspirethemes.com
+
+  -->
+
+  {{> structure/head }}
+
+  <body class='{{ body_class }}'>
+    {{!#unless @member}}
+    {{#unless true}}
+    {{> millmedia-cover}}
+    {{/unless}}
+    
+    {{> skip }}
+
+    {{> structure/header }}
+
+    <main id='main'>
+      {{{ body }}}
+    </main>
+
+    {{> structure/footer }}
+
+    {{!-- Include share popup component for social sharing functionality --}}
+    {{> share-popup}}
+
+
+    <script src='{{ asset 'js/app.min.js' }}'></script>
+    {{ ghost_foot }}
+    <script src="https://cdn.cove.chat/comments.js" data-cove-id="48d69aba3ba6565129e70123f200496b" async></script>
+    <script src="https://cdn.cove.chat/tools.js" data-cove-id="48d69aba3ba6565129e70123f200496b" async></script>
+    
+    
+
+  </body>
+</html>

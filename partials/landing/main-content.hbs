@@ -1,0 +1,25 @@
+<section class="main-content">
+    <div class="content-left">
+        <div class="about-text">
+            {{content}}
+        </div>
+
+        <form class="signup-form" data-members-form="signup">
+            <input type="email" data-members-email placeholder="Enter your email address" required>
+            <button type="submit" class="plausible-event-name=Signup+Landing+Page">SIGN UP FOR FREE</button>
+            <div class="status-container">
+                <p class="loading">Please wait...</p>
+                <p class="success">Please check your inbox and click the link to complete signup. Thank you!</p>
+                <p class="error">Sorry, something went wrong. Please try again.</p>
+            </div>
+        </form>
+    </div>
+    
+    <div class="content-right">
+        {{#if feature_image}}
+        <div class="feature-image">
+            <img src="{{feature_image}}" alt="{{title}}">
+        </div>
+        {{/if}}
+    </div>
+</section>

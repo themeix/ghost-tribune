@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" class="{{#if @custom.enable_dark_mode}} is-darkModeAdminSetting-enabled {{/if}}">
+<head>
+    {{> "landing/head"}}
+</head>
+<body class="{{body_class}}">
+    <div class="landing-container">
+        {{#page}}
+            {{> "landing/hero"}}
+            {{> "landing/main-content"}}
+
+            <section class="bottom-content">
+                <div class="bottom-grid">
+                    {{> "landing/testimonials"}}
+                    {{> "landing/latest-posts"}}
+                </div>
+            </section>
+        {{/page}}
+    </div>
+
+    {{ghost_foot}}
+
+    <script>
+        // Enhanced form handling for Ghost members
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.signup-form');
+            if (!form) return;
+
+            // Handle form states
+            form.addEventListener('submit', function(e) {
+                form.classList.add('loading');
+                form.classList.remove('success', 'error');
+            });
+
+            // Listen for Ghost member events
+            window.addEventListener('message', function(event) {
+                if (event.data && event.data.type === 'members-signup') {
+                    form.classList.remove('loading');
+                    if (event.data.success) {
+                        form.classList.add('success');
+                    } else {
+                        form.classList.add('error');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

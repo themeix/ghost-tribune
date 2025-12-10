@@ -1,0 +1,183 @@
+.c-signup-section {
+    font-family: var(--font-family-sansSerif);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+    padding-top: 40px;
+
+    .o-grid {        
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .border-top {
+        border-top: 5px solid black;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .flex-item {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+        .flex-item:first-child {
+            padding-right: 140px;
+        }
+    }
+
+    h1 {
+        font-size: var(--font-size-scale-7);
+        line-height: var(--line-height-scale-7);
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: var(--font-size-scale-5);
+        line-height: var(--line-height-scale-5);
+        margin-bottom: 50px;
+        letter-spacing: -0.04em;
+        font-family: var(--font-family-serif);
+    }
+
+    .ctacopy p {
+        font-family: var(--font-family-standfirst);
+        letter-spacing: 0;
+    }
+
+    .qname {
+        color: var(--color-accent);
+    }
+
+    // New subscription form styles
+    .subscription-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        position: relative;
+
+        .form-inputs {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        input[type="email"] {
+            padding: 12px 15px;
+            border: 1px solid var(--color-accent);
+            border-radius: 4px 0 0 4px;
+            font-size: var(--font-size-scale-3);
+            font-family: var(--font-family-serif);
+            width: 100%;
+            height: 45px;
+            color: #333;
+            
+            &::placeholder {
+                color: #999;
+            }
+            
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .c-btn {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            font-size: var(--font-size-scale-3);
+            letter-spacing: .03em;
+            cursor: pointer;  
+            font-family: var(--font-family-serif);
+            transition: background-color 0.2s ease;
+            white-space: nowrap;
+            text-transform: none;
+            height: 45px;
+            margin-left: -1px;
+
+            &:hover {
+                background-color: black;
+            }
+        }
+
+        .message-container {
+            margin-top: 0px;
+            min-height: 80px;
+        }
+
+        /* Form states */
+        .success, .error {
+            display: none;
+            padding: 10px;
+            border-radius: 2px;
+            font-size: var(--font-size-scale-2);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            width: 100%;
+        }
+
+        &.success .success {
+            display: block;
+        }
+
+        &.error .error {
+            display: block;
+            color: #721c24;
+        }
+    }
+
+    .quote {
+        margin-bottom: 20px;
+
+        p {
+            &:first-child {
+                font-size: var(--font-size-scale-4);
+                margin-bottom: 10px;
+                letter-spacing: -0.03em;
+                padding-top: 30px;
+            }
+
+            &:last-child {
+                font-size: var(--font-size-scale-4);      
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .flex-container {
+            flex-direction: column;
+            align-items: stretch;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .flex-item {
+            padding-right: 0;
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .subscription-form {
+            max-width: 100%;
+        }
+    }
+}

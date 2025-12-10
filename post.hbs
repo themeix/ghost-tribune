@@ -1,0 +1,32 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+  {{> topper }}
+
+  <article class='c-post {{ post_class }}'>
+
+    <div class='c-content {{#unless access}} c-content--has-shadow {{/unless}}'>
+      {{ content }}
+    </div>
+
+    {{#unless access}}
+      {{> upgrade }}
+    {{/unless}}
+
+    <br>
+
+
+    {{!-- GhostFlow MH - Cove Comments --}}
+    <div id="comment-section"></div>
+    {{!-- Compatibility with Ghost Newsletter --}}
+    <div id="ghost-comments"></div> 
+    {{> comments}}
+
+  </article>
+{{/post}}
+
+{{!> related }}
+
+{{> latest }}

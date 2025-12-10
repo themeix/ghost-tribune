@@ -1,0 +1,324 @@
+// ------------------------------------
+// Components > Landing Page
+// ------------------------------------
+
+.landing-container {
+  min-height: 100vh;
+  background-color: var(--color-background-primary);
+}
+
+// Hero Section
+.hero-section {
+  padding: var(--space-32) var(--space-16) var(--space-24);
+  text-align: center;
+  
+  @include mq($from: tablet) {
+    padding: var(--space-48) var(--space-24) var(--space-32);
+  }
+
+  .logo {
+    margin-bottom: var(--space-32);
+    
+    a {
+      display: inline-block;
+    }
+    
+    img {
+      height: 60px;
+      width: auto;
+      
+      @include mq($from: tablet) {
+        height: 80px;
+      }
+    }
+  }
+
+  h1 {
+    @include font($family: sansSerif, $scale: 7, $weight: regular);
+    color: var(--color-text-primary);
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
+    
+    @include mq($from: tablet) {
+      @include font($scale: 9, $line-height: 10);
+      max-width: 650px;
+    }
+  }
+}
+
+// Main Content Section
+.main-content {
+  padding: var(--space-24) var(--space-16);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-48);
+  
+  @include mq($from: tablet) {
+    padding: var(--space-32) var(--space-24);
+  }
+  
+  @include mq($from: desktop) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-64);
+    align-items: start;
+  }
+
+  .content-left {
+    .about-text {
+      @include font($family: standfirst, $scale: 3, $line-height: 4);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-32);
+      
+      @include mq($from: tablet) {
+        @include font($scale: 4, $line-height: 5);
+      }
+      
+      p {
+        margin-bottom: var(--space-16);
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .content-right {
+    .feature-image {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+// Signup Form
+.signup-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  max-width: 400px;
+  
+  @include mq($from: tablet) {
+    grid-template-columns: 1fr auto;
+    gap: 0;
+  }
+
+  input[type="email"] {
+    padding: var(--space-12) var(--space-16);
+    border: 2px solid var(--color-border-secondary);
+    border-radius: 5px;
+    font-size: var(--font-size-scale-2);
+    font-family: var(--font-family-meta);
+    background-color: var(--color-white);
+    color: var(--color-text-primary);
+    
+    @include mq($from: tablet) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      
+      @include mq($from: tablet) {
+        border-right: none;
+      }
+    }
+    
+    &::placeholder {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  button {
+    @extend .c-btn;
+    white-space: nowrap;
+    min-width: fit-content;
+    
+    @include mq($until: tablet) {
+      width: 100%;
+    }
+    
+    @include mq($from: tablet) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-left: 0;
+    }
+  }
+
+  .status-container {
+    grid-column: 1 / -1;
+    
+    p {
+      margin: 0;
+      padding: var(--space-8) 0;
+      font-size: var(--font-size-scale-1);
+      display: none;
+      
+      &.loading {
+        color: var(--color-text-secondary);
+      }
+      
+      &.success {
+        color: #28a745;
+      }
+      
+      &.error {
+        color: #dc3545;
+      }
+    }
+  }
+}
+
+// Bottom Content Section
+.bottom-content {
+  padding: var(--space-64) var(--space-16) var(--space-48);
+  background-color: var(--color-background-primary);
+  
+  @include mq($from: tablet) {
+    padding: var(--space-80) var(--space-24) var(--space-64);
+  }
+
+  .bottom-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--space-64);
+    
+    @include mq($from: desktop) {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-80);
+    }
+  }
+}
+
+// Testimonials
+.testimonials {
+  .quote {
+    margin-bottom: var(--space-32);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    p {
+      @include font($family: standfirst, $scale: 3, $line-height: 4);
+      color: var(--color-text-primary);
+      font-style: italic;
+      margin-bottom: var(--space-16);
+    }
+    
+    .author {
+      @include font($family: meta, $scale: 1);
+      color: var(--color-background-secondary);
+      font-weight: var(--font-weight-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--font-letter-spacing-small);
+    }
+  }
+}
+
+// Latest Posts
+.latest-posts {
+  .posts-grid {
+    display: grid;
+    gap: var(--space-24);
+    
+    @include mq($from: tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-32);
+    }
+  }
+
+  .post-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    .post-image {
+      position: relative;
+      aspect-ratio: var(--ratio-3x2);
+      margin-bottom: var(--space-16);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: var(--color-background-secondary);
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.2s ease;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .1);
+        opacity: 0;
+        transition: ease opacity var(--motion-duration-fast);
+      }
+    }
+    
+    @include hover() {
+      .post-image {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .post-content {
+      h3 {
+        @include font($family: sansSerif, $scale: 3, $weight: regular);
+        color: var(--color-text-primary);
+        margin: 0 0 var(--space-8) 0;
+        line-height: 1.3;
+        
+        @include link_underline_on_hover();
+      }
+      
+      .post-author {
+        @include font($family: meta, $scale: 1);
+        color: var(--color-text-secondary);
+        font-weight: var(--font-weight-medium);
+        text-transform: uppercase;
+        letter-spacing: var(--font-letter-spacing-small);
+      }
+    }
+  }
+}
+
+// Form states for Ghost members
+.signup-form {
+  &.loading {
+    .status-container .loading {
+      display: block;
+    }
+  }
+  
+  &.success {
+    .status-container .success {
+      display: block;
+    }
+  }
+  
+  &.error {
+    .status-container .error {
+      display: block;
+    }
+  }
+}

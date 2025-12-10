@@ -1,0 +1,23 @@
+<div class="latest-posts">
+    {{#get "posts" filter="tag:hash-landingpage" include="authors" limit="4" as |latest|}}
+        {{#if latest}}
+        <div class="posts-grid">
+            {{#foreach latest}}
+            <a href="{{url}}" class="post-card">
+                {{#if feature_image}}
+                <div class="post-image">
+                    <img src="{{feature_image}}" alt="{{title}}">
+                </div>
+                {{/if}}
+                <div class="post-content">
+                    <h3>{{title}}</h3>
+                    {{#if primary_author}}
+                    <div class="post-author">{{primary_author.name}}</div>
+                    {{/if}}
+                </div>
+            </a>
+            {{/foreach}}
+        </div>
+        {{/if}}
+    {{/get}}
+</div>

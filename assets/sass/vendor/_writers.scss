@@ -1,0 +1,108 @@
+.c-writers-section {
+    margin-top: var(--space-24);
+    color: var(--color-white);    
+
+    .c-section-heading {
+        color: var(--color-text-primary);
+        font-family: var(--font-family-sansSerif);
+        border-bottom: 2px solid black;
+        padding-bottom: var(--space-16);
+    }
+}
+
+.c-writers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-32);
+
+    > * {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+}
+
+.c-writer-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFDA72;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: inset 0 0 0 var(--border-width) var(--color-border-secondary);
+
+    &__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: var(--space-24);
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-family: var(--font-family-sansSerif);
+        font-size: var(--font-size-scale-4);
+        line-height: var(--line-height-scale-4);
+        margin-bottom: var(--space-8);
+        /* color: var(--ghost-accent-color); */
+        color: black;
+
+    }
+
+    &__bio {
+        font-family: var(--font-family-serif);
+        font-size: var(--font-size-scale-2);
+        line-height: var(--line-height-scale-4);
+        margin-bottom: var(--space-16);
+        letter-spacing: -0.03em;
+        color: #221E1F;
+    }
+
+    &__latest-post {
+        font-family: var(--font-family-sans);
+        font-size: var(--font-size-scale-1);
+        line-height: var(--line-height-scale-2);
+        margin-bottom: var(--space-16);
+        color: #221E1F;
+    }
+
+    &__links {
+        display: flex;
+        gap: var(--space-8);
+        flex-wrap: wrap;
+        margin-top: auto;
+    }
+
+    &__link {
+        font-size: var(--font-size-scale-1);
+        line-height: var(--line-height-scale-1);
+        font-weight: var(--font-weight-medium);
+        color: #221E1F;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .c-writers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .c-writer-card {
+        flex-direction: column;
+
+        &__image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+        }
+    }
+}

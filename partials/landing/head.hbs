@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta_title}}</title>
+
+{{!-- Include main stylesheet --}}
+{{> css/dist/style }}
+
+{{!-- Facebook Meta Tags --}}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{meta_title}}">
+<meta property="og:description" content="{{meta_description}}">
+<meta property="og:image" content="{{#if feature_image}}{{feature_image}}{{else}}{{@site.cover_image}}{{/if}}">
+
+{{ghost_head}}
+
+{{!-- Analytics --}}
+<script defer data-domain="{{@site.url}}" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>

@@ -1,0 +1,179 @@
+// ------------------------------------
+// Components > Footer
+// ------------------------------------
+
+.c-footer {
+  position: sticky;
+  top: 100vh;
+  padding: var(--space-64) 0 calc(var(--space-64) + 60px);
+  margin-top: var(--space-64);
+  background-color: var(--color-background-secondary);
+
+  @include mq($from: desktop) {
+    padding: 82px 0 47px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 200px;
+    position: relative;
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    @include mq($from: desktop) {
+      align-items: flex-start;
+      margin-top: var(--space-32);
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    text-align: center;
+    color: var(--color-white);
+    margin-top: var(--space-24);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    @include mq($from: desktop) {
+      text-align: left;
+    }
+  }
+
+  .c-logo__light {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-32);
+    
+    .u-block {
+      margin-left: 0;
+      width: 80%;
+    }
+    
+    @include mq($from: desktop) {
+      width: 30%;
+      justify-content: flex-start;
+      margin-bottom: 0;
+
+      .u-block {
+        width: auto;
+      }
+    }
+    
+    .c-logo__img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+
+      @include mq($from: desktop) {
+        max-height: 120px;
+      }
+    }
+  }
+
+  .c-social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-32);
+
+    @include mq($from: desktop) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: auto;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .c-footer-nav {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: white;
+
+    @include mq($from: desktop) {
+      text-align: left;
+      margin-top: var(--space-32);
+    }
+
+    .c-nav__item {
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+
+.c-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  line-height: 1;
+
+  @include mq($from: desktop) {
+    justify-content: flex-start;
+    gap: var(--space-16);
+    line-height: 1.2;
+  }
+
+  .c-nav__item {
+    @include font($line-height: 1, $weight: normal);
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+
+    @include mq($from: desktop) {
+      line-height: 1.2;
+    }
+  }
+
+  .c-nav__item:not(:first-child)::before {
+    display: none;
+  }
+
+  li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-white);
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+
+  .c-nav__link--current:after {
+    background-color: #000000;
+  }
+}
+
+.c-footer-link {
+  color: var(--color-white);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.c-footer {
+  .c-footer-nav .c-nav__item {
+    color: var(--color-white);
+  }
+}

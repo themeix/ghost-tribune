@@ -1,0 +1,53 @@
+// ------------------------------------
+// Tokens > Fonts
+// ------------------------------------
+
+// Miller Text Roman - Primary Body Font
+@font-face {
+  font-family: "MillerTextRoman";
+  src: url('/assets/fonts/MillerTextRoman/font.woff2') format('woff2'),
+       url('/assets/fonts/MillerTextRoman/font.woff') format('woff');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Miller Text Italic
+@font-face {
+  font-family: "MillerTextItalic";
+  font-style: italic;
+  src: url('/assets/fonts/MillerTextItalic/italic.woff2') format('woff2'),
+       url('/assets/fonts/MillerTextItalic/italic.woff') format('woff');
+  font-display: swap;
+  font-weight: normal;
+}
+
+// Mermaid
+@font-face {
+  font-family: "Mermaid";
+  src: url('/assets/fonts/mermaid/Mermaid1001.woff2') format('woff2'),
+       url('/assets/fonts/mermaid/Mermaid1001.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Minion Pro
+@font-face {
+  font-family: "Minion Pro";
+  src: url('/assets/fonts/minion/MinionProRegular.woff2') format('woff2'),
+       url('/assets/fonts/minion/MinionProRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Spectral
+@font-face {
+  font-family: "Spectral";
+  src: url('/assets/fonts/spectral/Spectral-Regular.woff2') format('woff2'),
+       url('/assets/fonts/spectral/Spectral-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

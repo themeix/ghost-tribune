@@ -3,7 +3,7 @@
   "description": "MillMedia custom Tripoli for The Tribune r1",
   "demo": "https://tripoli.aspirethemes.com/",
   "docs": "https://aspirethemes.com/docs/tripoli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "engines": {
     "ghost": ">=5.0.0"
   },
@@ -63,7 +63,7 @@
       },
       "enable_dark_mode": {
         "type": "boolean",
-        "default": true
+        "default": false
       },
       "dark_mode_accent_color": {
         "type": "color",
@@ -84,47 +84,56 @@
       },
       "instagram_page": {
         "type": "text",
-        "default": ""
+        "default": "https://www.instagram.com/sheffieldtrib/"
       },
       "bluesky_page": {
         "type": "text",
-        "default": ""
+        "default": "https://bsky.app/profile/sheffieldtribune.bsky.social"
       },      
       "homepage_writers": {
         "type": "text",
-        "group": "homepage"
+        "group": "homepage",
+        "default": "dan-hayes,victoria-munro,mollie"
       },      
       "homepage_cta_headline": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage",
+        "default": "Join The Tribune"        
       },      
       "homepage_cta_copy": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage" ,
+        "default": "By joining our free mailing list, you will get fascinating local stories and useful recommendations in your inbox every week, all produced by our team of independent journalists."        
       }, 
       "homepage_q1_copy": {
         "type": "text",
-        "group": "homepage"
+        "group": "homepage",
+        "default": "Really enjoying the long-form stories in the Sheffield Tribune. If like me you want a deeper understanding of what's going on in Sheffield and are keen to support local journalism, you can subscribe too."
       },
       "homepage_q1_name": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage",
+        "default": "Mark Ansell"        
       },
       "homepage_q2_copy": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage" ,
+        "default": "Sheffield needs a supportive yet critical voice and the traditional media model is seemingly no longer able to provide that on a consistent basis. I look forward to seeing what The Tribune can achieve as it continues to grow."        
       },
       "homepage_q2_name": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage" ,
+        "default": "David Coleman"        
       },                   
       "popup_cta": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage"    ,
+        "default": "Welcome to our new website. If you're already a member, put your e-mail in again to read all our articles"        
       },
       "share_cta": {
         "type": "text",
-        "group": "homepage"        
+        "group": "homepage" ,
+        "default": "Share this story to help us grow- click here"        
       },    
       "number_of_editors_picks_posts": {
         "type": "text",
@@ -133,7 +142,8 @@
       },    
     "tag_slugs_for_home_sections": {
       "type": "text",
-      "group": "homepage"
+      "group": "homepage",
+      "default": "investigation,culture,nature,history"        
       }
     },
     "card_assets": {

@@ -5,13 +5,17 @@
   "docs": "https://aspirethemes.com/docs/tripoli",
   "version": "1.0.8",
   "engines": {
-    "ghost": ">=5.0.0"
+    "ghost": ">=5.0.0",
+    "ghost-api": "v5"
   },
   "keywords": [
     "ghost-theme"
   ],
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "build": "gulp build",
+    "build:css": "gulp build_css",
+    "build:js": "gulp js"
   },
   "dependencies": {
     "bower": "^1.8.14",
